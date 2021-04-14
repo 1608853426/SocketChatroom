@@ -1,5 +1,6 @@
 package server;
 import common.model.entity.User;
+import org.junit.jupiter.api.Test;
 import server.model.entity.OnlineUserTableModel;
 import server.model.entity.RegistedUserTableModel;
 
@@ -43,6 +44,15 @@ public class DataBuffer {
             e.printStackTrace();
         }
     }
-
+@Test
+    public void test(){
+    try {
+        configProp.load(Thread.currentThread()
+                .getContextClassLoader()
+                .getResourceAsStream("serverconfig.properties"));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 }
 
